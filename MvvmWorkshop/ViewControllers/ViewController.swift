@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         view.backgroundColor = .white
         title = "MVVM workshop"
         setupViews()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed))
     }
 
     override func loadView() {
@@ -54,6 +55,10 @@ class ViewController: UIViewController, UITableViewDataSource {
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    @objc func addButtonPressed() {
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
