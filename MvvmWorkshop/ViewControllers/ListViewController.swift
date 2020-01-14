@@ -7,20 +7,23 @@
 //
 
 import UIKit
+import RxSwift
 
-class ViewController: UIViewController, UITableViewDataSource {
+protocol ListViewControllerViewModelProtocol {
+    var reloadDataObservable: Observable<Void> { get }
+    var cellViewModels: [SimpleCellViewModelProtocol] { get }
+    func addButtonPressed()
+}
 
-    let dummyData = [
-        "tomas",
-        "niklas",
-        "björn"
-    ]
+class ListViewController: UIViewController, UITableViewDataSource {
+    let viewModel: ListViewControllerViewModelProtocol
+    let disposeBag: DisposeBag
 
     private lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.dataSource = self
-        tv.register(StatusCell.self, forCellReuseIdentifier: "cell")
+        tv.register(SimpleCell.self, forCellReuseIdentifier: "cell")
         tv.rowHeight = UITableView.automaticDimension
         tv.estimatedRowHeight = 100
         return tv
@@ -32,6 +35,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         title = "MVVM workshop"
         setupViews()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed))
+        setupViewModelSubscriptions()
+    }
+
+    private func setupViewModelSubscriptions() {
+    viewModel.reloadDataObservable.observeOn(MainScheduler.asyncInstance).subscribe(onNext: { [weak self] in
+            self?.tableView.reloadData()
+        }).disposed(by: disposeBag)
     }
 
     override func loadView() {
@@ -43,7 +53,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init() {
+    init(viewModel: ListViewControllerViewModelProtocol) {
+        self.viewModel = viewModel
+        self.disposeBag = DisposeBag()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -58,17 +70,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     @objc func addButtonPressed() {
-        
+        viewModel.addButtonPressed()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyData.count
+        return viewModel.cellViewModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        return cell
+        let simpleCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SimpleCell
+
+        simpleCell.viewModel = viewModel.cellViewModels[indexPath.item]
+        
+        return simpleCell
     }
 
 }

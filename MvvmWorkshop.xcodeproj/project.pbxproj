@@ -8,30 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		38DD5B41568C073C6DD338F5 /* Pods_MvvmWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FF4C6A61D868B3BD862D81 /* Pods_MvvmWorkshop.framework */; };
+		8540B8AA23CDC1CE00F426F8 /* SiteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540B8A923CDC1CE00F426F8 /* SiteCellViewModel.swift */; };
+		8540B8AC23CDC24B00F426F8 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540B8AB23CDC24B00F426F8 /* Site.swift */; };
+		8540B8AE23CDE3DF00F426F8 /* ListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540B8AD23CDE3DF00F426F8 /* ListViewControllerViewModel.swift */; };
+		85B3889C23CDEBF200FA3B7D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B3889B23CDEBF200FA3B7D /* MainCoordinator.swift */; };
 		85F3FB2623CC636700CEFDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB2523CC636700CEFDFA /* AppDelegate.swift */; };
 		85F3FB2823CC636700CEFDFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB2723CC636700CEFDFA /* SceneDelegate.swift */; };
-		85F3FB2A23CC636700CEFDFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB2923CC636700CEFDFA /* ViewController.swift */; };
+		85F3FB2A23CC636700CEFDFA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB2923CC636700CEFDFA /* ListViewController.swift */; };
 		85F3FB2F23CC636A00CEFDFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F3FB2E23CC636A00CEFDFA /* Assets.xcassets */; };
 		85F3FB3223CC636A00CEFDFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F3FB3023CC636A00CEFDFA /* LaunchScreen.storyboard */; };
 		85F3FB3A23CC920F00CEFDFA /* StatusCodeChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB3923CC920F00CEFDFA /* StatusCodeChecker.swift */; };
 		85F3FB3D23CCC3AE00CEFDFA /* SiteStatusInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB3C23CCC3AE00CEFDFA /* SiteStatusInformation.swift */; };
 		85F3FB4223CCC76600CEFDFA /* SiteInformationInputViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB4123CCC76600CEFDFA /* SiteInformationInputViewHelper.swift */; };
-		85F3FB4623CCD08800CEFDFA /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB4523CCD08800CEFDFA /* StatusCell.swift */; };
+		85F3FB4623CCD08800CEFDFA /* SimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB4523CCD08800CEFDFA /* SimpleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61FF4C6A61D868B3BD862D81 /* Pods_MvvmWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MvvmWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8540B8A923CDC1CE00F426F8 /* SiteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteCellViewModel.swift; sourceTree = "<group>"; };
+		8540B8AB23CDC24B00F426F8 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		8540B8AD23CDE3DF00F426F8 /* ListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerViewModel.swift; sourceTree = "<group>"; };
+		85B3889B23CDEBF200FA3B7D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		85F3FB2223CC636700CEFDFA /* MvvmWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MvvmWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F3FB2523CC636700CEFDFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85F3FB2723CC636700CEFDFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85F3FB2923CC636700CEFDFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85F3FB2923CC636700CEFDFA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		85F3FB2E23CC636A00CEFDFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85F3FB3123CC636A00CEFDFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85F3FB3323CC636A00CEFDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F3FB3923CC920F00CEFDFA /* StatusCodeChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeChecker.swift; sourceTree = "<group>"; };
 		85F3FB3C23CCC3AE00CEFDFA /* SiteStatusInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteStatusInformation.swift; sourceTree = "<group>"; };
 		85F3FB4123CCC76600CEFDFA /* SiteInformationInputViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteInformationInputViewHelper.swift; sourceTree = "<group>"; };
-		85F3FB4523CCD08800CEFDFA /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		85F3FB4523CCD08800CEFDFA /* SimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCell.swift; sourceTree = "<group>"; };
 		BDE5741C533F17BA4B22A548 /* Pods-MvvmWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MvvmWorkshop.release.xcconfig"; path = "Target Support Files/Pods-MvvmWorkshop/Pods-MvvmWorkshop.release.xcconfig"; sourceTree = "<group>"; };
 		F545A573A0CD2503FB27B7C3 /* Pods-MvvmWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MvvmWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-MvvmWorkshop/Pods-MvvmWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +64,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		85B3889A23CDEBC100FA3B7D /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				85B3889B23CDEBF200FA3B7D /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		85E8CB9123CDC15700B3F06E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8540B8A923CDC1CE00F426F8 /* SiteCellViewModel.swift */,
+				8540B8AD23CDE3DF00F426F8 /* ListViewControllerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		85F3FB1923CC636700CEFDFA = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +102,10 @@
 		85F3FB2423CC636700CEFDFA /* MvvmWorkshop */ = {
 			isa = PBXGroup;
 			children = (
+				85B3889A23CDEBC100FA3B7D /* Coordinators */,
 				85F3FB4023CCC74800CEFDFA /* Utilities */,
 				85F3FB3F23CCC3C300CEFDFA /* ViewControllers */,
+				85E8CB9123CDC15700B3F06E /* ViewModels */,
 				85F3FB4423CCD04B00CEFDFA /* Cells */,
 				85F3FB3E23CCC3B900CEFDFA /* API */,
 				85F3FB3B23CCC3A100CEFDFA /* Models */,
@@ -95,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				85F3FB3C23CCC3AE00CEFDFA /* SiteStatusInformation.swift */,
+				8540B8AB23CDC24B00F426F8 /* Site.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,7 +138,7 @@
 		85F3FB3F23CCC3C300CEFDFA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				85F3FB2923CC636700CEFDFA /* ViewController.swift */,
+				85F3FB2923CC636700CEFDFA /* ListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -126,7 +154,7 @@
 		85F3FB4423CCD04B00CEFDFA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				85F3FB4523CCD08800CEFDFA /* StatusCell.swift */,
+				85F3FB4523CCD08800CEFDFA /* SimpleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -254,10 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85F3FB4623CCD08800CEFDFA /* StatusCell.swift in Sources */,
+				85F3FB4623CCD08800CEFDFA /* SimpleCell.swift in Sources */,
+				8540B8AE23CDE3DF00F426F8 /* ListViewControllerViewModel.swift in Sources */,
 				85F3FB4223CCC76600CEFDFA /* SiteInformationInputViewHelper.swift in Sources */,
-				85F3FB2A23CC636700CEFDFA /* ViewController.swift in Sources */,
+				85F3FB2A23CC636700CEFDFA /* ListViewController.swift in Sources */,
 				85F3FB2623CC636700CEFDFA /* AppDelegate.swift in Sources */,
+				85B3889C23CDEBF200FA3B7D /* MainCoordinator.swift in Sources */,
+				8540B8AC23CDC24B00F426F8 /* Site.swift in Sources */,
+				8540B8AA23CDC1CE00F426F8 /* SiteCellViewModel.swift in Sources */,
 				85F3FB3D23CCC3AE00CEFDFA /* SiteStatusInformation.swift in Sources */,
 				85F3FB2823CC636700CEFDFA /* SceneDelegate.swift in Sources */,
 				85F3FB3A23CC920F00CEFDFA /* StatusCodeChecker.swift in Sources */,

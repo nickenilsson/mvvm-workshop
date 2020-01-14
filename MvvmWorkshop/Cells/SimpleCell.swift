@@ -8,8 +8,17 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
-class StatusCell: UITableViewCell {
+protocol SimpleCellViewModelProtocol {
+    var titleObservable: Observable<String?> { get }
+    var subtitleObservable: Observable<String?> { get }
+    var statusObservable: Observable<String?> { get }
+    func start()
+    func suspend()
+}
+
+class SimpleCell: UITableViewCell {
 
     let verticalStack: UIStackView = {
         let stackView = UIStackView()
@@ -32,7 +41,6 @@ class StatusCell: UITableViewCell {
 
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Title"
         label.font = .preferredFont(forTextStyle: .headline)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
@@ -41,7 +49,6 @@ class StatusCell: UITableViewCell {
 
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Subtitle"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .subheadline)
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
@@ -50,12 +57,49 @@ class StatusCell: UITableViewCell {
 
     let statusLabel: UILabel = {
         let label = UILabel()
-        label.text = "0"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .title1)
         label.setContentHuggingPriority(.required, for: .horizontal)
         return label
     }()
+
+    private var disposeBag: DisposeBag? = DisposeBag()
+
+    var viewModel: SimpleCellViewModelProtocol? {
+        didSet {
+            bind()
+        }
+    }
+
+    private func bind() {
+        let disposeBag = DisposeBag()
+
+        viewModel?.titleObservable.subscribe(onNext: { [weak self] string in
+            self?.titleLabel.text = string
+        }).disposed(by: disposeBag)
+
+        viewModel?.statusObservable.observeOn(MainScheduler.asyncInstance).subscribe(onNext: { [weak self] string in
+            self?.statusLabel.text = string
+        }).disposed(by: disposeBag)
+
+        viewModel?.subtitleObservable.observeOn(MainScheduler.asyncInstance).subscribe(onNext: { [weak self] string in
+            self?.subtitleLabel.text = string
+        }).disposed(by: disposeBag)
+
+        self.disposeBag = disposeBag
+        self.viewModel?.start()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.viewModel?.suspend()
+        
+        self.disposeBag = nil
+
+        self.titleLabel.text = nil
+        self.statusLabel.text = nil
+        self.subtitleLabel.text = nil
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
