@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tv.register(StatusCell.self, forCellReuseIdentifier: "cell")
         tv.rowHeight = UITableView.automaticDimension
         tv.estimatedRowHeight = 100
         return tv
@@ -68,7 +68,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = dummyData[indexPath.item]
         return cell
     }
 

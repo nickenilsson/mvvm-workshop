@@ -16,6 +16,7 @@
 		85F3FB3A23CC920F00CEFDFA /* StatusCodeChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB3923CC920F00CEFDFA /* StatusCodeChecker.swift */; };
 		85F3FB3D23CCC3AE00CEFDFA /* SiteStatusInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB3C23CCC3AE00CEFDFA /* SiteStatusInformation.swift */; };
 		85F3FB4223CCC76600CEFDFA /* SiteInformationInputViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB4123CCC76600CEFDFA /* SiteInformationInputViewHelper.swift */; };
+		85F3FB4623CCD08800CEFDFA /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3FB4523CCD08800CEFDFA /* StatusCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		85F3FB3923CC920F00CEFDFA /* StatusCodeChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeChecker.swift; sourceTree = "<group>"; };
 		85F3FB3C23CCC3AE00CEFDFA /* SiteStatusInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteStatusInformation.swift; sourceTree = "<group>"; };
 		85F3FB4123CCC76600CEFDFA /* SiteInformationInputViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteInformationInputViewHelper.swift; sourceTree = "<group>"; };
+		85F3FB4523CCD08800CEFDFA /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		BDE5741C533F17BA4B22A548 /* Pods-MvvmWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MvvmWorkshop.release.xcconfig"; path = "Target Support Files/Pods-MvvmWorkshop/Pods-MvvmWorkshop.release.xcconfig"; sourceTree = "<group>"; };
 		F545A573A0CD2503FB27B7C3 /* Pods-MvvmWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MvvmWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-MvvmWorkshop/Pods-MvvmWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 			children = (
 				85F3FB4023CCC74800CEFDFA /* Utilities */,
 				85F3FB3F23CCC3C300CEFDFA /* ViewControllers */,
+				85F3FB4423CCD04B00CEFDFA /* Cells */,
 				85F3FB3E23CCC3B900CEFDFA /* API */,
 				85F3FB3B23CCC3A100CEFDFA /* Models */,
 				85F3FB2523CC636700CEFDFA /* AppDelegate.swift */,
@@ -118,6 +121,14 @@
 				85F3FB4123CCC76600CEFDFA /* SiteInformationInputViewHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		85F3FB4423CCD04B00CEFDFA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				85F3FB4523CCD08800CEFDFA /* StatusCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		90171362F4C2138732540CDF /* Pods */ = {
@@ -243,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F3FB4623CCD08800CEFDFA /* StatusCell.swift in Sources */,
 				85F3FB4223CCC76600CEFDFA /* SiteInformationInputViewHelper.swift in Sources */,
 				85F3FB2A23CC636700CEFDFA /* ViewController.swift in Sources */,
 				85F3FB2623CC636700CEFDFA /* AppDelegate.swift in Sources */,
